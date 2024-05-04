@@ -27,7 +27,7 @@ const Home = () => {
   return (
   <div>
     {
-      loading ? <Spinner/>: posts.length>0 ? 
+      loading ? <Spinner/>: posts.length > 0 ? 
       (<div>
         {posts.map((post)=>(
           <Product key={post.id} post={post}/>))}
