@@ -20,12 +20,12 @@ const Product = ({post}) => {
   }
   
   return (
-    <div>
+    <div className="flex flex-col items-center">
     <div>
       {post.title}
     </div>
     <div>
-      <p>{post.description}</p>
+      <p>{post.description.split(" ").slice(0,10).join(" ")+"..."}</p>
     </div>
     <div>
       <img src={post.image} alt="" />
@@ -35,7 +35,7 @@ const Product = ({post}) => {
     </div>
     <button>
       {
-        cart.some((p) => p.id == post.id) ? (
+        cart.some((p) => p.id === post.id) ? (
           <button onClick={removeFromCart}>
             Remove Item
           </button>

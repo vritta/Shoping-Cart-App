@@ -8,6 +8,7 @@ export const CartSlice = createSlice({
   initialState:[],
   reducers:{
     remove: (state, action)=>{
+      console.log(action);
       return state.filter((item)=> item.id !== action.payload)
     },
     add: (state, action)=>{

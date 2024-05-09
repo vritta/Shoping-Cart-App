@@ -23,12 +23,12 @@ const Cart = () => {
             })
           }
         </div>) : 
-        <div>
-          <h1>No Items Selected</h1>
+        (<div>
+          <h1>Cart Empty</h1>
           <Link to="/">
             <button>Shop Now  </button>
           </Link>
-        </div>
+        </div>)
       }
       <div>
         <div>
@@ -42,9 +42,6 @@ const Cart = () => {
           <p>Total Amount: {totalAmount}</p>
           <button>
             CheckOut Now
-          </button>
-          <button>
-            Checkout Now
           </button>
         </div>
       </div>
