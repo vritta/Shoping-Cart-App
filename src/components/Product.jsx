@@ -26,7 +26,9 @@ const Product = ({post}) => {
       {post.title}
     </div>
     <div>
-      <p className="w-40 text-gray-400 font-normal text-[10px] text-left">{post.description.split(" ").slice(0,10).join(" ")+"..."}</p>
+      <p className="w-40 text-gray-400 font-normal text-[10px] text-left">
+        {post.description.split(" ").slice(0,10).join(" ")+"..."}
+      </p>
     </div>
     <div className="h-[180px]">
       <img src={post.image} alt="" className="h-full w-full"/>
@@ -39,11 +41,19 @@ const Product = ({post}) => {
       <button>
         {
           cart.some((p) => p.id === post.id) ? (
-            <button onClick={removeFromCart}>
+            <button 
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold 
+            text-[12px] p-1 px-3 uppercase 
+            hover:bg-gray-700
+            hover:text-white transition duration-300 ease-in" onClick={removeFromCart}>
               Remove Item
             </button>
           ) :(
-            <button onClick={addToCart}>
+            <button
+            className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold 
+            text-[12px] p-1 px-3 uppercase 
+            hover:bg-gray-700
+            hover:text-white transition duration-300 ease-in" onClick={addToCart}>
               Add to Cart
             </button>
           )
